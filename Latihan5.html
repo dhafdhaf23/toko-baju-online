@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Baju</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .produk-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .produk-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            width: 200px; /* Set width for uniformity */
+        }
+
+        .produk-item img {
+            max-width: 100%;
+        }
+
+        .deskripsi {
+            display: none; /* Deskripsi tersembunyi secara default */
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Toko Baju Kami!</h1>
+        <nav>
+            <ul>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="produk">
+        <h2>Produk Kami</h2>
+        <div class="produk-container">
+            <!-- Produk 1 -->
+            <div class="produk-item">
+                <img src="https://via.placeholder.com/150" alt="Baju Casual">
+                <h3>Baju Casual</h3>
+                <p>Harga: Rp 150.000</p>
+                <button onclick="toggleDeskripsi('deskripsi1')">Lihat Deskripsi</button>
+                <div id="deskripsi1" class="deskripsi">
+                    Baju casual ini cocok untuk aktivitas sehari-hari dengan bahan yang nyaman dan desain modern.
+                </div>
+                <button onclick="pesanProduk('Baju Casual')">Pesan</button>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="produk-item">
+                <img src="https://via.placeholder.com/150" alt="Baju Formal">
+                <h3>Baju Formal</h3>
+                <p>Harga: Rp 200.000</p>
+                <button onclick="toggleDeskripsi('deskripsi2')">Lihat Deskripsi</button>
+                <div id="deskripsi2" class="deskripsi">
+                    Baju formal ini sangat cocok untuk acara resmi, dengan bahan berkualitas tinggi dan desain elegan.
+                </div>
+                <button onclick="pesanProduk('Baju Formal')">Pesan</button>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="produk-item">
+                <img src="https://via.placeholder.com/150" alt="Baju Olahraga">
+                <h3>Baju Olahraga</h3>
+                <p>Harga: Rp 180.000</p>
+                <button onclick="toggleDeskripsi('deskripsi3')">Lihat Deskripsi</button>
+                <div id="deskripsi3" class="deskripsi">
+                    Baju olahraga ini dirancang untuk kenyamanan saat berolahraga, dengan bahan yang menyerap keringat.
+                </div>
+                <button onclick="pesanProduk('Baju Olahraga')">Pesan</button>
+            </div>
+
+             <!-- Produk 4 -->
+             <div class="produk-item">
+                <img src="https://via.placeholder.com/150" alt="Baju Musim Panas">
+                <h3>Baju Musim Panas</h3>
+                <p>Harga: Rp 120.000</p>
+                <button onclick="toggleDeskripsi('deskripsi4')">Lihat Deskripsi</button>
+                <div id="deskripsi4" class="deskripsi">
+                    Baju musim panas ini ringan dan nyaman, cocok untuk cuaca panas dengan desain yang stylish.
+                </div>
+                <button onclick="pesanProduk('Baju Musim Panas')">Pesan</button>
+             </div>
+
+             <!-- Produk 5 -->
+             <div class="produk-item">
+                 <img src="https://via.placeholder.com/150" alt="Baju Musim Dingin">
+                 <h3>Baju Musim Dingin</h3>
+                 <p>Harga: Rp 250.000</p>
+                 <button onclick="toggleDeskripsi('deskripsi5')">Lihat Deskripsi</button>
+                 <div id="deskripsi5" class="deskripsi">
+                     Baju musim dingin ini hangat dan nyaman, dilengkapi dengan bahan tebal yang melindungi dari udara dingin.
+                 </div>
+                 <button onclick="pesanProduk('Baju Musim Dingin')">Pesan</button>
+             </div>
+
+             <!-- Tambahkan lebih banyak produk sesuai kebutuhan -->
+        </div>
+    </section>
+
+    <section id="kontak">
+        <h2>Kontak Kami</h2>
+        <p>Email: info@tokobaju.com</p>
+        <p>Telepon: (021) 12345678</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Toko Baju. Semua hak dilindungi.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleDeskripsi(id) {
+            const deskripsi = document.getElementById(id);
+            
+			// Toggle visibility
+			if (deskripsi.style.display === "none") {
+				deskripsi.style.display = "block";
+			} else {
+				deskripsi.style.display = "none";
+			}
+		}
+
+		function pesanProduk(namaProduk) {
+			alert(`Anda telah memesan ${namaProduk}. Terima kasih!`);
+		}
+    </script>
+
+</body>
+</html>
